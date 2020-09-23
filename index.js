@@ -5,7 +5,7 @@
 // 👇 COMPLETE YOUR WORK BELOW 👇
 */
 
-const { starships, films } = require("./data/fixtures-bundle");
+
 
 /**
  * ### Challenge `getName`
@@ -73,11 +73,11 @@ function getSummary(character) {
  * Sample data expected output: 8000
 */
 function getVehiclesCostInCreditsSumTotal(character) {
-   let cost = character.reduce(function(acc,item){
-      return acc + item[parseInt("cost_in_credits",10)]
-   },0)
-   return cost;
-}
+   
+      return acc + character.parseInt(["cost_in_credits"])
+   }
+  
+
 
 /**
  * ### Challenge `getStarshipPassengerAndCrewSumTotal`
@@ -89,13 +89,13 @@ function getVehiclesCostInCreditsSumTotal(character) {
  *
  * Sample data expected output: 27
 */
-// function getStarshipPassengerAndCrewSumTotal(character) {
-//   let sum = starships.reduce(function(acc,item){
-//       return acc + item[parseInt("crew",10] + item[parseInt("passengers",10)]
-//   },0)
+function getStarshipPassengerAndCrewSumTotal(character) {
+  let sum = character.reduce(function(acc,item){
+      return acc + item[parseInt("crew")] + item[parseInt("passengers",)]
+  },0)
 
-//   return sum;
-// }
+  return sum;
+}
 
 
 /**
