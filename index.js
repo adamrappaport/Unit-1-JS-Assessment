@@ -5,6 +5,8 @@
 // 👇 COMPLETE YOUR WORK BELOW 👇
 */
 
+
+
 /**
  * ### Challenge `getName`
  * Example ✅
@@ -30,7 +32,7 @@ function getName(character) {
  */
 function getFilmCount(character) {
   // TODO: Add your code inside the functions (others below).
-
+ return character["films"].length;
 }
 
 /**
@@ -42,7 +44,11 @@ function getFilmCount(character) {
  * If length is 0. Return 'none'
 */
 function getSecondStarshipName(character) {
-  // TODO: Add your code here.
+  if (character["starships"].length>0){
+    return character["starships"][1]["name"];
+  }else {
+    return 'none';
+  }
 }
 
 /**
@@ -55,7 +61,7 @@ function getSecondStarshipName(character) {
  *    Result: `Luke Skywalker, 172cm, 77kg. Featured in 5 films.`
  */
 function getSummary(character) {
-  // TODO: Add your code here.
+  return `${character["name"]}, ${character["height"]}cm, ${character["mass"]}kg. Featured in ${character["films"].length} films.`
 }
 
 /**
@@ -67,8 +73,11 @@ function getSummary(character) {
  * Sample data expected output: 8000
 */
 function getVehiclesCostInCreditsSumTotal(character) {
-  // TODO: Add your code here.
-}
+   
+      return acc + character.parseInt(["cost_in_credits"])
+   }
+  
+
 
 /**
  * ### Challenge `getStarshipPassengerAndCrewSumTotal`
@@ -81,8 +90,13 @@ function getVehiclesCostInCreditsSumTotal(character) {
  * Sample data expected output: 27
 */
 function getStarshipPassengerAndCrewSumTotal(character) {
-  // TODO: Add your code here.
+  let sum = character.reduce(function(acc,item){
+      return acc + item[parseInt("crew")] + item[parseInt("passengers",)]
+  },0)
+
+  return sum;
 }
+
 
 /**
  * ### Challenge `getNthFilm`
